@@ -15,8 +15,7 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
         boolean flag=customerdao.findCustomer(first_name);
         if( flag ) {
             request.getSession().setAttribute("first_name", first_name);
-            request.setAttribute("first_name1",first_name);
-//            response.sendRedirect(path+"/showfilms.jsp");
+            response.sendRedirect(path+"/showfilms.jsp");
         } else{
             request.getSession().setAttribute("err", "用户名不正确！");
             response.sendRedirect(path+"/login.jsp");
